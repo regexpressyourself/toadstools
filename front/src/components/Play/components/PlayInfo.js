@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import "./PlayInfo.scss";
 
 function PlayInfo({ songData }) {
   const { font } = useParams();

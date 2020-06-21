@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Play from "./Play/Play";
 import PlayWrapper from "./Play/PlayWrapper";
 
 export default function Router() {
@@ -26,9 +25,6 @@ export default function Router() {
         </Route>
         <Route exact path="/play/:user/info/:font">
           <PlayWrapper view="info" />
-        </Route>
-        <Route exact path="/play">
-          <Play />
         </Route>
       </Switch>
     </BrowserRouter>

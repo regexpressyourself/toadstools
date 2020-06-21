@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { getSongData } from "../../services/api/play";
 import PlayInfo from "./components/PlayInfo";
 import PlayArt from "./components/PlayArt";
 
@@ -7,17 +7,12 @@ function PlayWrapper({ view }) {
   const [songData, setSongData] = useState({});
 
   useEffect(() => {
-    const getSongData = async () => {
-      const { data } = await axios.get("http://localhost:8000/playing");
-      if (songData.song !== data.song) {
-        setSongData(data);
-      }
-    };
-    getSongData();
-    setInterval(() => {
-      getSongData();
+    getSongData(songData, setSongData);
+    const timer = setInterval(() => {
+      getSongData(songData, setSongData);
     }, 5000);
-  }, [songData.song]);
+    return () => clearInterval(timer);
+  }, [songData, songData.song]);
 
   switch (view) {
     case "art":
