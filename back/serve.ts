@@ -15,11 +15,12 @@ router.get("/playing/:user", async ctx => {
 
 const app = new Application();
 //app.use(oakCors({'origin': 'http://192.168.0.3:3000'})); // Enable CORS for All Routes
-app.use(
-  oakCors({
-    origin: "http://localhost:8123"
-  })
-); // Enable CORS for All Routes
+//app.use(
+//oakCors({
+//origin: "http://localhost:8123"
+//})
+//); // Enable CORS for All Routes
+app.use(oakCors()); // Enable CORS for All Routes
 
 app.use(router.routes());
 app.use(router.allowedMethods());

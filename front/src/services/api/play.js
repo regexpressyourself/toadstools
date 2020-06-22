@@ -3,7 +3,7 @@ export const getSongData = async (songData, setSongData, user) => {
   console.log("user");
   console.log(user);
   const { data } = await axios.get(
-    `http://localhost:8123/playing/${user && user}`
+    `/playing/${user && user}`
   );
   if (songData.song !== data.song) {
     setSongData(data);
