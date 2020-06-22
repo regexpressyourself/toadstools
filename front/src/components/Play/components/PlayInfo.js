@@ -28,7 +28,7 @@ function PlayInfo({ songData }) {
     setWidth(width);
   }, [songData]);
 
-  return (
+  return !songData.song ? null : (
     <Info
       elWidth={width}
       fontFamily={displayFont && displayFont.replace("+", " ")}

@@ -4,12 +4,6 @@ import { Response } from "https://deno.land/x/oak/response.ts";
 const KEY = Deno.env.get("KEY");
 const SECRET = Deno.env.get("SECRET");
 const SPOTSECRET = Deno.env.get("SPOTSECRET");
-console.log("SPOTSECRET");
-console.log(SPOTSECRET);
-
-export const handleHome = () => {
-  return "Home\n";
-};
 
 export const getNowPlayingData = async () => {
   const userName = "zookeeprr";
