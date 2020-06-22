@@ -3,12 +3,10 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 function Countdown() {
-  const { font } = useParams();
+  const { font, seconds } = useParams();
   const [displayFont] = useState(font === "gh" ? "Gloria Hallelujah" : font);
   const [countdown, setCountdown] = useState(null);
-  const [text, setText] = useState("Done");
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
+  const [text, setText] = useState("a moment!");
 
   useEffect(() => {
     if (displayFont) {
@@ -23,9 +21,9 @@ function Countdown() {
     }
   }, [displayFont]);
 
-  const startTimer = () => {
-    let min = minutes;
-    let sec = seconds;
+  useEffect(() => {
+    let sec = seconds % 60;
+    let min = parseInt(seconds / 60);
 
     setInterval(function() {
       setCountdown(
@@ -40,43 +38,11 @@ function Countdown() {
         setCountdown(text);
       }
     }, 1000);
-  };
+  }, [seconds, text]);
 
-  return countdown ? (
+  return !countdown ? null : (
     <Section fontFamily={displayFont && displayFont.replace("+", " ")}>
       <p>{countdown}</p>
-    </Section>
-  ) : (
-    <Section fontFamily={displayFont && displayFont.replace("+", " ")}>
-      <label for="seconds">Seconds</label>{" "}
-      <input
-        max="59"
-        type="number"
-        min="0"
-        id="seconds"
-        onChange={({ target }) => setSeconds(target.value)}
-      />
-      <br />
-      <label for="minutes">Minutes</label>{" "}
-      <input
-        max="59"
-        min="0"
-        type="number"
-        id="minutes"
-        onChange={({ target }) => setMinutes(target.value)}
-      />
-      <br />
-      <label for="text">Completion text</label>{" "}
-      <input
-        type="text"
-        id="text"
-        value={text}
-        onChange={({ target }) => setText(target.value)}
-      />
-      <br />
-      <button disabled={minutes > 59 || seconds > 59} onClick={startTimer}>
-        Start Timer
-      </button>
     </Section>
   );
 }

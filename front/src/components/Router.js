@@ -16,7 +16,10 @@ export default function Router() {
         <Route exact path="/countdown">
           <Countdown />
         </Route>
-        <Route exact path="/countdown/:font">
+        <Route exact path="/countdown/:seconds">
+          <Countdown />
+        </Route>
+        <Route exact path="/countdown/:seconds/:font">
           <Countdown />
         </Route>
         <Route exact path="/play/art">
