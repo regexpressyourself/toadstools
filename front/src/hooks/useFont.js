@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react";
 import useQueryParams from "./useQueryParams";
+
+const setFont = font => {
+  if (!font || font === "undefined") {
+    return "sans-serif";
+  }
+  if (font === "gh") {
+    return "Gloria Hallelujah";
+  }
+  return font;
+};
+
 function useFont() {
   const query = useQueryParams();
   const font = query.get("font");
-  const [displayFont] = useState(font === "gh" ? "Gloria Hallelujah" : font);
+  const [displayFont] = useState(setFont(font));
+
   useEffect(() => {
     if (displayFont) {
       const link = document.createElement("link");
@@ -16,6 +28,8 @@ function useFont() {
       document.head.appendChild(link);
     }
   }, [displayFont]);
+
   return displayFont;
 }
+
 export default useFont;

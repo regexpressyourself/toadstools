@@ -7,21 +7,15 @@ function Home() {
     <HomeWrapper>
       <h1>PSST</h1>
       <p>
-        Pretty
-        <br />
-        Sweet
-        <br />
-        Streaming
-        <br />
-        Tools
-        <br />
+        <em>Pretty Sweet Streaming Tools</em>
       </p>
-      <Link to="/custom">Make your own!</Link>
+      <Link to="/custom">
+        <button>Make your own!</button>
+      </Link>
       <br />
       <br />
+      <hr />
       Or see:
-      <br />
-      <br />
       <ul>
         <li>
           <Link to="/play/info?user=zookeeprr&font=Gloria+Hallelujah">
@@ -32,7 +26,7 @@ function Home() {
           <Link to="/play/art?user=zookeeprr">Sam's now playing art</Link>
         </li>
         <li>
-          <Link to="/countdown/?font=Gloria+Hallelujah">Countdown timer</Link>
+          <Link to="/countdown/?font=Gloria+Hallelujah">5 minute timer</Link>
         </li>
       </ul>
     </HomeWrapper>

@@ -21,14 +21,14 @@ function Custom() {
     <Redirect push to={redirect} />
   ) : (
     <>
-      <Section color={color} fontFamily={chosenFont}>
+      <Section fontFamily={chosenFont}>
         <h1>PSST</h1>
         <p>
           <em>Pretty Sweet Streaming Tools</em>
         </p>
       </Section>
       <hr />
-      <Section color={color} fontFamily={chosenFont}>
+      <Section fontFamily={chosenFont}>
         <h2>Now playing info:</h2>
         <br />
         <label htmlFor="username">Last.fm Username</label>{" "}
@@ -39,7 +39,9 @@ function Custom() {
           onChange={({ target }) => setUsername(target.value)}
         />
         <br />
-        <label htmlFor="color">Color</label>{" "}
+        <label htmlFor="color">
+          Color <Colorblock color={color} />
+        </label>{" "}
         <input
           type="text"
           value={color}
@@ -63,18 +65,22 @@ function Custom() {
         <br />
         <button
           onClick={() =>
-            setRedirect(
-              `/play/info?user=${username}&font=${chosenFont}&color=${color}`
+            window.open(
+              `/play/info?user=${username}&font=${chosenFont}&color=${color}`,
+              "_blank"
             )
           }
         >
           See Now Playing Info
         </button>
         <br />
+        or
+        <br />
         <button
           onClick={() =>
-            setRedirect(
-              `/play/art?user=${username}&font=${chosenFont}&color=${color}`
+            window.open(
+              `/play/art?user=${username}&font=${chosenFont}&color=${color}`,
+              "_blank"
             )
           }
         >
@@ -82,7 +88,7 @@ function Custom() {
         </button>
       </Section>
       <hr />
-      <Section color={color} fontFamily={chosenFont}>
+      <Section fontFamily={chosenFont}>
         <h2>Countdown timer:</h2>
         <br />
         <label htmlFor="time">Time (in seconds)</label>{" "}
@@ -93,7 +99,9 @@ function Custom() {
           onChange={({ target }) => setTime(target.value)}
         />
         <br />
-        <label htmlFor="color">Color</label>{" "}
+        <label htmlFor="color">
+          Color <Colorblock color={color} />
+        </label>{" "}
         <input
           type="text"
           value={color}
@@ -117,8 +125,9 @@ function Custom() {
         <br />
         <button
           onClick={() =>
-            setRedirect(
-              `/countdown?seconds=${time}&font=${chosenFont}&color=${color}`
+            window.open(
+              `/countdown?seconds=${time}&font=${chosenFont}&color=${color}`,
+              "_blank"
             )
           }
         >
@@ -138,4 +147,11 @@ const Section = styled.section`
 `;
 const Option = styled.option`
   font-family: ${props => props.fontFamily};
+`;
+const Colorblock = styled.span`
+  color: ${props => props.color || "black"};
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: ${props => props.color || "black"};
 `;

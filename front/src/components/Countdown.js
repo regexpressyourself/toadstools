@@ -30,7 +30,7 @@ function Countdown() {
 
   return !countdown ? null : (
     <Section fontFamily={displayFont && displayFont.replace("+", " ")}>
-      <p>{countdown}</p>
+      <Span color={query.get("color")}>{countdown}</Span>
     </Section>
   );
 }
@@ -38,4 +38,7 @@ function Countdown() {
 export default Countdown;
 const Section = styled.section`
   font-family: ${props => props.fontFamily};
+`;
+const Span = styled.span`
+  color: ${props => props.color};
 `;
