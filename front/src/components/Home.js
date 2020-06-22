@@ -20,10 +20,10 @@ function Home() {
       <Link to="/play/zookeeprr/info/Gloria+Hallelujah">
         Sam's now playing info
       </Link>
-        <br />
-      <Link to="/play/zookeeprr/art">
-        Sam's now playing art
-      </Link>
+      <br />
+      <Link to="/play/zookeeprr/art">Sam's now playing art</Link>
+      <br />
+      <Link to="/countdown/Gloria+Hallelujah">Countdown timer</Link>
     </>
   );
 }

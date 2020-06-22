@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PlayWrapper from "./Play/PlayWrapper";
 import Home from "./Home";
+import Countdown from "./Countdown";
 
 export default function Router() {
   return (
@@ -11,6 +12,12 @@ export default function Router() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/countdown">
+          <Countdown />
+        </Route>
+        <Route exact path="/countdown/:font">
+          <Countdown />
         </Route>
         <Route exact path="/play/art">
           <PlayWrapper view="art" />
