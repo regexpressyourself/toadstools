@@ -50,8 +50,8 @@ const Info = styled.div`
   font-family: ${props => props.fontFamily};
   color: ${props => props.color};
   position: relative !important;
-  width: 300px;
-  height: 45px;
+  width: 3500;
+  height: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 220ms ease-in-out;
