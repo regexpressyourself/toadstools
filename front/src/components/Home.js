@@ -16,13 +16,25 @@ function Home() {
         Tools
         <br />
       </p>
-      <Link to="/play/info?user=zookeeprr&font=Gloria+Hallelujah">
-        Sam's now playing info
-      </Link>
+      <Link to="/custom">Make your own!</Link>
       <br />
-      <Link to="/play/art?user=zookeeprr">Sam's now playing art</Link>
       <br />
-      <Link to="/countdown/?font=Gloria+Hallelujah">Countdown timer</Link>
+      Or see:
+      <br />
+      <br />
+      <ul>
+        <li>
+          <Link to="/play/info?user=zookeeprr&font=Gloria+Hallelujah">
+            Sam's now playing info
+          </Link>
+        </li>
+        <li>
+          <Link to="/play/art?user=zookeeprr">Sam's now playing art</Link>
+        </li>
+        <li>
+          <Link to="/countdown/?font=Gloria+Hallelujah">Countdown timer</Link>
+        </li>
+      </ul>
     </HomeWrapper>
   );
 }

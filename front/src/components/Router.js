@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PlayWrapper from "./Play/PlayWrapper";
 import Home from "./Home";
 import Countdown from "./Countdown";
+import Custom from "./Custom";
 
 export default function Router() {
   return (
@@ -13,34 +14,16 @@ export default function Router() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/custom">
+          <Custom />
+        </Route>
         <Route exact path="/countdown">
-          <Countdown />
-        </Route>
-        <Route exact path="/countdown/:seconds">
-          <Countdown />
-        </Route>
-        <Route exact path="/countdown/:seconds/:font">
           <Countdown />
         </Route>
         <Route exact path="/play/art">
           <PlayWrapper view="art" />
         </Route>
-        <Route exact path="/play/:user/art">
-          <PlayWrapper view="art" />
-        </Route>
         <Route exact path="/play/info">
-          <PlayWrapper view="info" />
-        </Route>
-        <Route exact path="/play/:user/info">
-          <PlayWrapper view="info" />
-        </Route>
-        <Route exact path="/play/info/:font">
-          <PlayWrapper view="info" />
-        </Route>
-        <Route exact path="/play/:user/info/:font">
-          <PlayWrapper view="info" />
-        </Route>
-        <Route exact path="/play/:user/info/:font/:color">
           <PlayWrapper view="info" />
         </Route>
       </Switch>
