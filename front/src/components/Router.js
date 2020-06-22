@@ -37,6 +37,9 @@ export default function Router() {
         <Route exact path="/play/:user/info/:font">
           <PlayWrapper view="info" />
         </Route>
+        <Route exact path="/play/:user/info/:font/:color">
+          <PlayWrapper view="info" />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 function PlayInfo({ songData }) {
-  const { font } = useParams();
+  const { font, color } = useParams();
+  console.log("color")
+  console.log(color)
   const text = useRef(null);
   const [width, setWidth] = useState(0);
   const [displayFont] = useState(font === "gh" ? "Gloria Hallelujah" : font);
@@ -31,6 +33,7 @@ function PlayInfo({ songData }) {
   return !songData.song ? null : (
     <Info
       elWidth={width}
+      color={color}
       fontFamily={displayFont && displayFont.replace("+", " ")}
     >
       <InfoItem elWidth={width}>{songText}</InfoItem>
@@ -45,6 +48,7 @@ function PlayInfo({ songData }) {
 export default PlayInfo;
 const Info = styled.div`
   font-family: ${props => props.fontFamily};
+  color: ${props => props.color};
   position: relative !important;
   width: 300px;
   height: 45px;
