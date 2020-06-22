@@ -58,7 +58,7 @@ const Info = styled.div`
   white-space: nowrap;
 `;
 const InfoItem = styled.span`
-  animation: scroll ${props => props.elWidth / 420}s linear 0s infinite;
+  animation: scroll ${props => props.elWidth / 550}s linear 0s infinite;
   position: absolute;
   left: ${props => props.elOffset + 50 || 0}px;
   @keyframes scroll {
