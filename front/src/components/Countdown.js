@@ -1,25 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import useFont from "../hooks/useFont";
+import useQueryParams from "../hooks/useQueryParams";
 
 function Countdown() {
-  const { font, seconds } = useParams();
-  const [displayFont] = useState(font === "gh" ? "Gloria Hallelujah" : font);
+  const query = useQueryParams();
+  const seconds = query.get("seconds") || 300;
+  const displayFont = useFont();
   const [countdown, setCountdown] = useState(null);
-  const [text, setText] = useState("a moment!");
-
-  useEffect(() => {
-    if (displayFont) {
-      const link = document.createElement("link");
-      link.setAttribute(
-        "href",
-        `https://fonts.googleapis.com/css2?family=${displayFont}&display=swap`
-      );
-      link.setAttribute("rel", "stylesheet");
-
-      document.head.appendChild(link);
-    }
-  }, [displayFont]);
 
   useEffect(() => {
     let sec = seconds % 60;
@@ -35,10 +23,10 @@ function Countdown() {
         sec = 59;
       }
       if (min < 0) {
-        setCountdown(text);
+        setCountdown("a moment!");
       }
     }, 1000);
-  }, [seconds, text]);
+  }, [seconds]);
 
   return !countdown ? null : (
     <Section fontFamily={displayFont && displayFont.replace("+", " ")}>

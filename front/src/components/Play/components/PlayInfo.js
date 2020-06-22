@@ -1,29 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import useFont from "../../../hooks/useFont";
+import useQueryParams from "../../../hooks/useQueryParams";
 
 function PlayInfo({ songData }) {
-  const { font, color } = useParams();
-  console.log("color")
-  console.log(color)
+  const query = useQueryParams();
   const text = useRef(null);
   const [width, setWidth] = useState(0);
-  const [displayFont] = useState(font === "gh" ? "Gloria Hallelujah" : font);
+  const displayFont = useFont();
 
   const songText = `${songData.song} // ${songData.artist} // ${songData.album}`;
-
-  useEffect(() => {
-    if (displayFont) {
-      const link = document.createElement("link");
-      link.setAttribute(
-        "href",
-        `https://fonts.googleapis.com/css2?family=${displayFont}&display=swap`
-      );
-      link.setAttribute("rel", "stylesheet");
-
-      document.head.appendChild(link);
-    }
-  }, [displayFont]);
 
   useEffect(() => {
     const width = text.current && text.current.clientWidth + 1;
@@ -33,7 +19,7 @@ function PlayInfo({ songData }) {
   return !songData.song ? null : (
     <Info
       elWidth={width}
-      color={color}
+      color={query.get("color")}
       fontFamily={displayFont && displayFont.replace("+", " ")}
     >
       <InfoItem elWidth={width}>{songText}</InfoItem>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import useQueryParams from "../../hooks/useQueryParams";
 import { getSongData } from "../../services/api/play";
 import PlayInfo from "./components/PlayInfo";
 import PlayArt from "./components/PlayArt";
 
 function PlayWrapper({ view }) {
   const [songData, setSongData] = useState({});
-  const { user } = useParams();
+  const query = useQueryParams();
+  const user = query.get("user");
 
   useEffect(() => {
     getSongData(songData, setSongData, user);

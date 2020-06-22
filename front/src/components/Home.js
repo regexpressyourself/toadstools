@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import styled from "styled-components";
 
 function Home() {
   return (
-    <>
+    <HomeWrapper>
       <h1>PSST</h1>
       <p>
         Pretty
@@ -17,18 +16,18 @@ function Home() {
         Tools
         <br />
       </p>
-      <Link to="/play/zookeeprr/info/Gloria+Hallelujah">
+      <Link to="/play/info?user=zookeeprr&font=Gloria+Hallelujah">
         Sam's now playing info
       </Link>
       <br />
-      <Link to="/play/zookeeprr/art">Sam's now playing art</Link>
+      <Link to="/play/art?user=zookeeprr">Sam's now playing art</Link>
       <br />
-      <Link to="/countdown/Gloria+Hallelujah">Countdown timer</Link>
-    </>
+      <Link to="/countdown/?font=Gloria+Hallelujah">Countdown timer</Link>
+    </HomeWrapper>
   );
 }
 
 export default Home;
-const Info = styled.div`
-  font-family: ${props => props.fontFamily};
+const HomeWrapper = styled.section`
+  font-size: 28px;
 `;
