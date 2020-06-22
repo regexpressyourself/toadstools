@@ -36,7 +36,7 @@ const Info = styled.div`
   font-family: ${props => props.fontFamily};
   color: ${props => props.color};
   position: relative !important;
-  width: 3500;
+  width: 4500;
   height: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
