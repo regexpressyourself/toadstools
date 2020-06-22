@@ -5,11 +5,12 @@ const KEY = Deno.env.get("KEY");
 const SECRET = Deno.env.get("SECRET");
 const SPOTSECRET = Deno.env.get("SPOTSECRET");
 
-export const getNowPlayingData = async () => {
-  const userName = "zookeeprr";
+export const getNowPlayingData = async (user = "zookeeprr") => {
+  console.log("user")
+  console.log(user)
   const body = await (
     await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${userName}&api_key=${KEY}&format=json&nowplaying=true&limit=1`
+      `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${KEY}&format=json&nowplaying=true&limit=1`
     )
   ).json();
   const songData = body.recenttracks.track[0];

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PlayWrapper from "./Play/PlayWrapper";
+import Home from "./Home";
 
 export default function Router() {
   return (
@@ -8,6 +9,9 @@ export default function Router() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/play/art">
           <PlayWrapper view="art" />
         </Route>
