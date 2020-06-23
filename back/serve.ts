@@ -4,8 +4,6 @@ import { getNowPlayingData } from "./routeHandlers.ts";
 
 const router = new Router();
 router.get("/playing/:user", async ctx => {
-  console.log("params");
-  console.log(ctx.params);
   if (ctx.params && ctx.params.user) {
     ctx.response.body = await getNowPlayingData(ctx.params.user);
   } else {
@@ -14,12 +12,6 @@ router.get("/playing/:user", async ctx => {
 });
 
 const app = new Application();
-//app.use(oakCors({'origin': 'http://192.168.0.3:3000'})); // Enable CORS for All Routes
-//app.use(
-//oakCors({
-//origin: "http://localhost:8123"
-//})
-//); // Enable CORS for All Routes
 app.use(oakCors()); // Enable CORS for All Routes
 
 app.use(router.routes());
@@ -37,7 +29,6 @@ app.use(async ctx => {
           root: `${Deno.cwd()}/front/build`,
           index: "index.html"
         });
-        //ctx.response.body = await handleHome();
         break;
       default:
         await send(ctx, "", {
@@ -46,7 +37,6 @@ app.use(async ctx => {
         });
     }
   }
-  //ctx.response.body = "Hello World!";
 });
 await app.listen({ port: 8123 });
 console.log("http://localhost:8123/");
