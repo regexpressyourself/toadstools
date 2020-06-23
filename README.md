@@ -86,6 +86,6 @@ I'm always happy to receive pull requests, questions/issues regarding code, and 
 
 ## License
 
-WAILto is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+PSST is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 **[Back to top](#table-of-contents)**
