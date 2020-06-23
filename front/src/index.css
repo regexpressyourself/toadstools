@@ -1,5 +1,5 @@
 body {
-  font-size: 100px;
+  font-size: 28px;
 }
 select:not([size]):not([multiple]) {
   height: unset;

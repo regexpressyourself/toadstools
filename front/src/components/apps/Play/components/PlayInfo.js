@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import useFont from "../../../hooks/useFont";
-import useQueryParams from "../../../hooks/useQueryParams";
+import useFont from "../../../../hooks/useFont";
+import useQueryParams from "../../../../hooks/useQueryParams";
+import { Hide } from "../../../styles";
 
 function PlayInfo({ songData }) {
   const query = useQueryParams();
@@ -33,6 +34,7 @@ function PlayInfo({ songData }) {
 
 export default PlayInfo;
 const Info = styled.div`
+  font-size: 100px;
   font-family: ${props => props.fontFamily};
   color: ${props => props.color};
   position: relative !important;
@@ -55,11 +57,4 @@ const InfoItem = styled.span`
       transform: translate(-${props => props.elWidth + 50 || 0}px, 0);
     }
   }
-`;
-const Hide = styled.div`
-  position: absolute;
-  visibility: hidden;
-  height: auto;
-  width: auto;
-  white-space: nowrap; /* Thanks to Herb Caudill comment */
 `;

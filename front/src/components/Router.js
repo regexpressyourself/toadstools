@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import PlayWrapper from "./Play/PlayWrapper";
-import Home from "./Home";
-import Countdown from "./Countdown";
-import Custom from "./Custom";
+import Home from "./pages/Home";
+import Custom from "./pages/Custom";
+import Countdown from "./apps/Countdown";
+import PlayWrapper from "./apps/Play/PlayWrapper";
 
 export default function Router() {
   return (

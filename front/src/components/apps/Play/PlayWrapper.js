@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import useQueryParams from "../../hooks/useQueryParams";
-import { getSongData } from "../../services/api/play";
+import useQueryParams from "../../../hooks/useQueryParams";
+import { getSongData } from "../../../services/api/play";
 import PlayInfo from "./components/PlayInfo";
 import PlayArt from "./components/PlayArt";
 

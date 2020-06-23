@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import useFont from "../hooks/useFont";
-import useQueryParams from "../hooks/useQueryParams";
+import { Section } from "../styles";
+import useFont from "../../hooks/useFont";
+import useQueryParams from "../../hooks/useQueryParams";
 
 function Countdown() {
   const query = useQueryParams();
@@ -36,9 +37,7 @@ function Countdown() {
 }
 
 export default Countdown;
-const Section = styled.section`
-  font-family: ${props => props.fontFamily};
-`;
 const Span = styled.span`
   color: ${props => props.color};
+  font-size: 100px;
 `;
