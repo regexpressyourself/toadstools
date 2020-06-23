@@ -32,14 +32,18 @@ function PlayForm({ type = "info" }) {
               name="username"
               label={labels.username}
             />
-            <Input
-              set={setColor}
-              value={color}
-              name="color"
-              type="color"
-              label={labels.color}
-            />
-            <FontInput font={font} setFont={setFont} />
+            {type === "art" ? null : (
+              <>
+                <Input
+                  set={setColor}
+                  value={color}
+                  name="color"
+                  type="color"
+                  label={labels.color}
+                />
+                <FontInput font={font} setFont={setFont} />
+              </>
+            )}
             {type === "art" ? (
               <button
                 onClick={() =>
