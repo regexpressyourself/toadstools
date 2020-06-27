@@ -18,7 +18,10 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(async ctx => {
   const req = ctx.request;
-  if (req.url.pathname.slice(0, 7) === "/static") {
+  if (
+    req.url.pathname.startsWith("/static") ||
+    req.url.pathname.startsWith("/favicon")
+  ) {
     await ctx.send({
       root: `${Deno.cwd()}/front/build`
     });
