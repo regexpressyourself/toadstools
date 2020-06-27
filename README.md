@@ -1,10 +1,10 @@
-# PSST
+# toadstools
 
-Pretty Sweet Streaming Tools.
+Totally Addicting Streaming Tools.
 
 Made with Deno and React.
 
-[See it live here!](https://psst.smessina.com/)
+[See it live here!](https://toadstools.smessina.com/)
 
 ## Table of Contents
 
@@ -18,11 +18,21 @@ Made with Deno and React.
 
 I do some streaming and have found a few needs when doing so. This app is meant to remedy those needs, one-by-one.
 
+## Getting Started
+
+If you have [Deno](https://deno.land/) and [yarn](https://yarnpkg.com/), you can start toadstools using the Makefile:
+
+```
+make install # installs front end dependencies
+make start # starts React server
+make deno # starts Deno server
+```
+
 ## Development
 
 ```
-git clone https://github.com/regexpressyourself/psst.git
-cd psst
+git clone https://github.com/regexpressyourself/toadstools.git
+cd toadstools
 ```
 
 First, you'll need a `.env` file in the root directory with the following information:
@@ -86,6 +96,6 @@ I'm always happy to receive pull requests, questions/issues regarding code, and 
 
 ## License
 
-PSST is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+toadstools is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 **[Back to top](#table-of-contents)**

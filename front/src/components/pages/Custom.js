@@ -3,6 +3,7 @@ import { CustomContext, customReducer } from "./CustomContext";
 import { Section } from "../styles";
 import CountdownForm from "../forms/CountdownForm";
 import PlayForm from "../forms/PlayForm";
+import logo from "../../assets/toadstools-simple.png";
 
 function Custom() {
   const [config, configDispatch] = useReducer(customReducer, {});
@@ -11,10 +12,9 @@ function Custom() {
   return (
     <CustomContext.Provider value={{ config, configDispatch }}>
       <Section fontFamily={font}>
-        <h1>PSST</h1>
-        <p>
-          <em>Pretty Sweet Streaming Tools</em>
-        </p>
+        <h1>
+          <img src={logo} alt="toadstools" />
+        </h1>
         <p>Choose any of the following:</p>
       </Section>
       <hr />
