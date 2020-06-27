@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../assets/toadstools.png";
+import "../../assets/styles/marx/marx.scss";
+import "../../assets/styles/index.scss";
+import logo from "../../assets/img/toadstools.png";
 
 function Home() {
   return (
     <HomeWrapper>
-      <h1>
-        <img src={logo} alt="toadstools" />
-      </h1>
-      <Link to="/custom">
-        <button>Make your own!</button>
-      </Link>
-      <br />
-      <br />
+      <Header>
+        <h1>
+          <img src={logo} alt="toadstools" />
+        </h1>
+        <Link to="/custom">
+          <button>Make your own!</button>
+        </Link>
+      </Header>
       <hr />
       Or see:
       <ul>
@@ -23,7 +25,7 @@ function Home() {
           </Link>
         </li>
         <li>
-          <Link to="/play/art?user=zookeeprr">Sampl now playing art</Link>
+          <Link to="/play/art?user=zookeeprr">Sample now playing art</Link>
         </li>
         <li>
           <Link to="/countdown/?font=Gloria+Hallelujah">5 minute timer</Link>
@@ -36,4 +38,8 @@ function Home() {
 export default Home;
 const HomeWrapper = styled.section`
   font-size: 28px;
+`;
+const Header = styled.header`
+  text-align: center;
+  padding-bottom: 50px;
 `;

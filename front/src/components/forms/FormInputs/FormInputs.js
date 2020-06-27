@@ -5,7 +5,8 @@ const fonts = [
   "Anton",
   "Gloria+Hallelujah",
   "Indie+Flower",
-  "Josefin+Sans"
+  "Josefin+Sans",
+  "Della+Respira"
 ];
 
 export const Input = ({ set, value, name, label, type = "text" }) => (

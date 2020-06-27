@@ -1,0 +1,16 @@
+body {
+}
+button {
+  background: #d03930;
+  font-family: "Della Respira";
+  &:hover {
+    cursor: pointer;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Della Respira";
+}
