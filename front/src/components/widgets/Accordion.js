@@ -38,11 +38,13 @@ const Content = styled.div`
 `;
 const Header = styled.div`
   display: flex;
+  align-items: center;
 
   &:hover {
     cursor: pointer;
   }
   img {
+    height: 50px;
     width: 50px;
     margin-right: 10px;
   }
