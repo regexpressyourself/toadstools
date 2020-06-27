@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,cACF,CACA,mCACE,YACF","file":"main.22a92246.chunk.css","sourcesContent":["body {\n  font-size: 28px;\n}\nselect:not([size]):not([multiple]) {\n  height: unset;\n}\n"]}

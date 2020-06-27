@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Hide } from "../styles";
 import shroom1 from "../../assets/img/shroom1.png";
-import shroom2 from "../../assets/img/shroom2.png";
 import shroom3 from "../../assets/img/shroom3.png";
 
 function Accordion({ header, content }) {
@@ -45,5 +44,6 @@ const Header = styled.div`
   }
   img {
     width: 50px;
+    margin-right: 10px;
   }
 `;

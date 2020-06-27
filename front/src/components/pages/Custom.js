@@ -7,7 +7,6 @@ import logo from "../../assets/img/toadstools-simple.png";
 
 function Custom() {
   const [config, configDispatch] = useReducer(customReducer, {});
-  const font = config.font;
 
   return (
     <CustomContext.Provider value={{ config, configDispatch }}>
